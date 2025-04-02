@@ -1,3 +1,10 @@
-import numpy as np 
+from flask import Flask
 
-print("hello world #" + str(np.random.randint(0, 1000)))
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return "hi, chel"
+
+if __name__ == "__main__":
+    app.run(debug=True, port=5050)
